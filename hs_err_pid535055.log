@@ -1,0 +1,239 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007f69830a30ad, pid=535055, tid=817379
+#
+# JRE version: OpenJDK Runtime Environment (11.0.9.1+1) (build 11.0.9.1+1-Ubuntu-0ubuntu1.20.04)
+# Java VM: OpenJDK 64-Bit Server VM (11.0.9.1+1-Ubuntu-0ubuntu1.20.04, mixed mode, sharing, tiered, compressed oops, g1 gc, linux-amd64)
+# Problematic frame:
+# C  [libjimage.so+0x30ad]
+#
+# Core dump will be written. Default location: Core dumps may be processed with "/usr/share/apport/apport %p %s %c %d %P %E" (or dumping to /home/davide/hdd/SpringProjects/Story/core.535055)
+#
+# If you would like to submit a bug report, please visit:
+#   https://bugs.launchpad.net/ubuntu/+source/openjdk-lts
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -agentlib:jdwp=transport=dt_socket,suspend=y,address=localhost:35267 -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=42395 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=localhost -Dspring.jmx.enabled=true -Dspring.application.admin.enabled=true -Djava.security.egd=file:/dev/./urandom -Xverify:none -XX:TieredStopAtLevel=1 -Dspring.boot.project.name=Story -javaagent:/home/davide/.eclipse/360744286_linux_gtk_x86_64/configuration/org.eclipse.osgi/222/0/.cp/lib/javaagent-shaded.jar -Dfile.encoding=UTF-8 it.giannipeg.back.StoryApplication
+
+Host: AMD Ryzen 5 2600 Six-Core Processor, 12 cores, 15G, Ubuntu 20.04.1 LTS
+Time: Wed Jan  6 05:59:17 2021 CET elapsed time: 56531.379951 seconds (0d 15h 42m 11s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f6908001800):  JavaThread "RMI TCP Connection(5)-127.0.0.1" daemon [_thread_in_vm, id=817379, stack(0x00007f68c6399000,0x00007f68c649a000)]
+
+Stack: [0x00007f68c6399000,0x00007f68c649a000],  sp=0x00007f68c64958c0,  free space=1010k
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libjimage.so+0x30ad]
+C  [libjimage.so+0x3da2]
+C  [libjimage.so+0x42b1]  JIMAGE_FindResource+0xf1
+V  [libjvm.so+0x5ae8d1]
+V  [libjvm.so+0x5b1081]
+V  [libjvm.so+0xde0f0d]
+V  [libjvm.so+0xddfa9a]
+V  [libjvm.so+0xde205b]
+V  [libjvm.so+0x66062e]
+V  [libjvm.so+0x84ec06]
+j  sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0()V+449 java.rmi@11.0.9.1
+j  sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0()Ljava/lang/Void;+1 java.rmi@11.0.9.1
+j  sun.rmi.transport.tcp.TCPTransport$ConnectionHandler$$Lambda$1046.run()Ljava/lang/Object;+4 java.rmi@11.0.9.1
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x8575d9]
+V  [libjvm.so+0x90c8a8]  JVM_DoPrivileged+0x548
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+0 java.base@11.0.9.1
+j  sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run()V+37 java.rmi@11.0.9.1
+J 6270 c1 java.util.concurrent.ThreadPoolExecutor.runWorker(Ljava/util/concurrent/ThreadPoolExecutor$Worker;)V java.base@11.0.9.1 (187 bytes) @ 0x00007f6965a153e4 [0x00007f6965a150e0+0x0000000000000304]
+J 6865 c1 java.util.concurrent.ThreadPoolExecutor$Worker.run()V java.base@11.0.9.1 (9 bytes) @ 0x00007f6965afa5ac [0x00007f6965afa540+0x000000000000006c]
+J 6848 c1 java.lang.Thread.run()V java.base@11.0.9.1 (17 bytes) @ 0x00007f6965af4934 [0x00007f6965af48c0+0x0000000000000074]
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x8575d9]
+V  [libjvm.so+0x855c2e]
+V  [libjvm.so+0x8fe7d1]
+V  [libjvm.so+0xe17ccf]
+V  [libjvm.so+0xe14330]
+V  [libjvm.so+0xbd26e6]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0()V+449 java.rmi@11.0.9.1
+j  sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0()Ljava/lang/Void;+1 java.rmi@11.0.9.1
+j  sun.rmi.transport.tcp.TCPTransport$ConnectionHandler$$Lambda$1046.run()Ljava/lang/Object;+4 java.rmi@11.0.9.1
+v  ~StubRoutines::call_stub
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+0 java.base@11.0.9.1
+j  sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run()V+37 java.rmi@11.0.9.1
+J 6270 c1 java.util.concurrent.ThreadPoolExecutor.runWorker(Ljava/util/concurrent/ThreadPoolExecutor$Worker;)V java.base@11.0.9.1 (187 bytes) @ 0x00007f6965a153e4 [0x00007f6965a150e0+0x0000000000000304]
+J 6865 c1 java.util.concurrent.ThreadPoolExecutor$Worker.run()V java.base@11.0.9.1 (9 bytes) @ 0x00007f6965afa5ac [0x00007f6965afa540+0x000000000000006c]
+J 6848 c1 java.lang.Thread.run()V java.base@11.0.9.1 (17 bytes) @ 0x00007f6965af4934 [0x00007f6965af48c0+0x0000000000000074]
+v  ~StubRoutines::call_stub
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 1 (SEGV_MAPERR), si_addr: 0x00007f69738b7070
+
+Register to memory mapping:
+
+RAX=0x0000000000007815 is an unknown value
+RBX=0x00007f68c6495971 is pointing into the stack for thread: 0x00007f6908001800
+RCX=0x00007f68c6495999 is pointing into the stack for thread: 0x00007f6908001800
+RDX=0x0000000000007815 is an unknown value
+RSP=0x00007f68c64958c0 is pointing into the stack for thread: 0x00007f6908001800
+RBP=0x00007f68c64958e0 is pointing into the stack for thread: 0x00007f6908001800
+RSI=0x0 is NULL
+RDI=0x00007f69830a8030: <offset 0x0000000000008030> in /usr/lib/jvm/java-11-openjdk-amd64/lib/libjimage.so at 0x00007f69830a0000
+R8 =0x00007f697389901c is an unknown value
+R9 =0x00007f68c6496780 is pointing into the stack for thread: 0x00007f6908001800
+R10=0x00007f6982b04240: <offset 0x0000000000f3c240> in /usr/lib/jvm/java-11-openjdk-amd64/lib/server/libjvm.so at 0x00007f6981bc8000
+R11=0x00007f68c6496ae8 is pointing into the stack for thread: 0x00007f6908001800
+R12=0x0000000000008412 is an unknown value
+R13=0x00007f68c6495970 is pointing into the stack for thread: 0x00007f6908001800
+R14=0x0 is NULL
+R15=0x00007f69284f56f0 points into unknown readable memory: 73 75 6e 2f 72 6d 69 2f
+
+
+Registers:
+RAX=0x0000000000007815, RBX=0x00007f68c6495971, RCX=0x00007f68c6495999, RDX=0x0000000000007815
+RSP=0x00007f68c64958c0, RBP=0x00007f68c64958e0, RSI=0x0000000000000000, RDI=0x00007f69830a8030
+R8 =0x00007f697389901c, R9 =0x00007f68c6496780, R10=0x00007f6982b04240, R11=0x00007f68c6496ae8
+R12=0x0000000000008412, R13=0x00007f68c6495970, R14=0x0000000000000000, R15=0x00007f69284f56f0
+RIP=0x00007f69830a30ad, EFLAGS=0x0000000000010212, CSGSFS=0x002b000000000033, ERR=0x0000000000000004
+  TRAPNO=0x000000000000000e
+
+Top of Stack: (sp=0x00007f68c64958c0)
+0x00007f68c64958c0:   00007f69648a4808 00007f68c6496a08
+0x00007f68c64958d0:   00007f697c009dd0 00007f68c6495970
+0x00007f68c64958e0:   00007f68c6495950 00007f69830a3da2
+0x00007f68c64958f0:   0000000000000000 000000070d6d8c58 
+
+Instructions: (pc=0x00007f69830a30ad)
+0x00007f69830a2fad:   f3 ff ff 44 03 65 90 e9 3f fe ff ff 0f 1f 80 00
+0x00007f69830a2fbd:   00 00 00 41 8b 10 41 89 55 00 41 8b 54 00 fc 41
+0x00007f69830a2fcd:   89 54 05 fc e9 82 fc ff ff 66 2e 0f 1f 84 00 00
+0x00007f69830a2fdd:   00 00 00 b9 0a 00 00 00 e9 f0 fc ff ff 41 0f b7
+0x00007f69830a2fed:   54 00 fe 66 41 89 54 05 fe e9 5d fc ff ff 0f 1f
+0x00007f69830a2ffd:   44 00 00 f3 0f 1e fa 0f b6 17 89 f0 89 f1 4c 8d
+0x00007f69830a300d:   47 01 84 d2 74 1c 0f 1f 44 00 00 69 c9 93 01 00
+0x00007f69830a301d:   01 49 83 c0 01 31 d1 41 0f b6 50 ff 84 d2 75 eb
+0x00007f69830a302d:   89 c8 25 ff ff ff 7f c3 90 66 2e 0f 1f 84 00 00
+0x00007f69830a303d:   00 00 00 f3 0f 1e fa 48 85 d2 0f 84 da 00 00 00
+0x00007f69830a304d:   55 48 89 e5 41 55 41 54 41 89 cc 53 48 83 ec 08
+0x00007f69830a305d:   85 c9 0f 84 ba 00 00 00 49 89 f5 48 8d 5e 01 0f
+0x00007f69830a306d:   b6 36 49 89 d0 40 84 f6 0f 84 9d 00 00 00 48 89
+0x00007f69830a307d:   d9 b8 93 01 00 01 0f 1f 44 00 00 69 d0 93 01 00
+0x00007f69830a308d:   01 48 83 c1 01 40 0f b6 c6 0f b6 71 ff 31 d0 40
+0x00007f69830a309d:   84 f6 75 e7 25 ff ff ff 7f 31 d2 41 f7 f4 89 d0
+0x00007f69830a30ad:   41 8b 34 80 48 8b 07 ff 50 20 85 c0 7f 15 74 62
+0x00007f69830a30bd:   f7 d0 41 89 c0 48 83 c4 08 44 89 c0 5b 41 5c 41
+0x00007f69830a30cd:   5d 5d c3 41 0f b6 4d 00 89 c6 84 c9 74 1b 0f 1f
+0x00007f69830a30dd:   44 00 00 69 f6 93 01 00 01 48 83 c3 01 31 ce 0f
+0x00007f69830a30ed:   b6 4b ff 84 c9 75 ec 89 f0 25 ff ff ff 7f 31 d2
+0x00007f69830a30fd:   48 83 c4 08 41 f7 f4 5b 41 5c 41 5d 5d 41 89 d0
+0x00007f69830a310d:   44 89 c0 c3 0f 1f 80 00 00 00 00 b8 93 01 00 01
+0x00007f69830a311d:   eb 87 41 b8 ff ff ff ff eb 9b 41 83 c8 ff 44 89
+0x00007f69830a312d:   c0 c3 90 f3 0f 1e fa eb 1d 66 2e 0f 1f 84 00 00
+0x00007f69830a313d:   00 00 00 0f b6 16 84 d2 74 13 38 c2 75 15 48 83
+0x00007f69830a314d:   c7 01 48 83 c6 01 0f b6 07 84 c0 75 e6 48 89 f8
+0x00007f69830a315d:   c3 66 90 31 c0 c3 90 66 66 2e 0f 1f 84 00 00 00
+0x00007f69830a316d:   00 00 90 f3 0f 1e fa 48 85 f6 74 51 0f b6 06 84
+0x00007f69830a317d:   c0 74 4a 0f b6 d0 83 e0 07 c1 fa 03 44 8d 50 01
+0x00007f69830a318d:   0f b6 c0 41 89 d1 4c 8d 44 06 02 48 8d 56 01 31
+0x00007f69830a319d:   c0 66 90 0f b6 0a 48 c1 e0 08 48 83 c2 01 48 09 
+
+
+Stack slot to memory mapping:
+stack at sp + 0 slots: 0x00007f69648a4808 is at code_begin+5096 in an Interpreter codelet
+invoke return entry points  [0x00007f69648a3420, 0x00007f69648a4f00]  6880 bytes
+stack at sp + 1 slots: 0x00007f68c6496a08 is pointing into the stack for thread: 0x00007f6908001800
+stack at sp + 2 slots: 0x00007f697c009dd0 points into unknown readable memory: 00 43 00 24 69 7f 00 00
+stack at sp + 3 slots: 0x00007f68c6495970 is pointing into the stack for thread: 0x00007f6908001800
+stack at sp + 4 slots: 0x00007f68c6495950 is pointing into the stack for thread: 0x00007f6908001800
+stack at sp + 5 slots: 0x00007f69830a3da2: <offset 0x0000000000003da2> in /usr/lib/jvm/java-11-openjdk-amd64/lib/libjimage.so at 0x00007f69830a0000
+stack at sp + 6 slots: 0x0 is NULL
+stack at sp + 7 slots: 0x000000070d6d8c58 points into unknown readable memory: 19 e7 2e a6 5a 00 00 00
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007f691c0020e0, length=34, elements={
+0x00007f697c245000, 0x00007f697c247000, 0x00007f697c24d800, 0x00007f697c250000,
+0x00007f697c252000, 0x00007f697c28f800, 0x00007f697c2db000, 0x00007f697c2df000,
+0x00007f697c638000, 0x00007f697c725000, 0x00007f697c72c800, 0x00007f697c740000,
+0x00007f697d14a000, 0x00007f68e0002000, 0x00007f697d14d800, 0x00007f697d18d000,
+0x00007f697d452800, 0x00007f6930001000, 0x00007f697da3c000, 0x00007f697da3e000,
+0x00007f697da3f000, 0x00007f697da41000, 0x00007f697da43000, 0x00007f697da45000,
+0x00007f697da47000, 0x00007f697da49000, 0x00007f697da4b000, 0x00007f697da4d000,
+0x00007f697da4f000, 0x00007f697da55800, 0x00007f697da58000, 0x00007f697c01a800,
+0x00007f68a4063800, 0x00007f6908001800
+}
+
+Java Threads: ( => current thread )
+  0x00007f697c245000 JavaThread "Reference Handler" daemon [_thread_blocked, id=535074, stack(0x00007f695437a000,0x00007f695447b000)]
+  0x00007f697c247000 JavaThread "Finalizer" daemon [_thread_blocked, id=535075, stack(0x00007f6954279000,0x00007f695437a000)]
+  0x00007f697c24d800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=535076, stack(0x00007f6954178000,0x00007f6954279000)]
+  0x00007f697c250000 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=535077, stack(0x00007f6954077000,0x00007f6954178000)]
+  0x00007f697c252000 JavaThread "Sweeper thread" daemon [_thread_blocked, id=535078, stack(0x00007f693793b000,0x00007f6937a3c000)]
+  0x00007f697c28f800 JavaThread "Common-Cleaner" daemon [_thread_blocked, id=535079, stack(0x00007f693783a000,0x00007f693793b000)]
+  0x00007f697c2db000 JavaThread "JDWP Transport Listener: dt_socket" daemon [_thread_in_native, id=535082, stack(0x00007f6937739000,0x00007f693783a000)]
+  0x00007f697c2df000 JavaThread "JDWP Event Helper Thread" daemon [_thread_blocked, id=535084, stack(0x00007f6937638000,0x00007f6937739000)]
+  0x00007f697c638000 JavaThread "Service Thread" daemon [_thread_blocked, id=535088, stack(0x00007f6937436000,0x00007f6937537000)]
+  0x00007f697c725000 JavaThread "RMI TCP Accept-0" daemon [_thread_in_native, id=535092, stack(0x00007f6937335000,0x00007f6937436000)]
+  0x00007f697c72c800 JavaThread "RMI TCP Accept-42395" daemon [_thread_in_native, id=535093, stack(0x00007f6937234000,0x00007f6937335000)]
+  0x00007f697c740000 JavaThread "RMI TCP Accept-0" daemon [_thread_in_native, id=535094, stack(0x00007f6937133000,0x00007f6937234000)]
+  0x00007f697d14a000 JavaThread "Catalina-utility-1" [_thread_blocked, id=535109, stack(0x00007f6936826000,0x00007f6936927000)]
+  0x00007f68e0002000 JavaThread "Catalina-utility-2" [_thread_blocked, id=535110, stack(0x00007f6936125000,0x00007f6936226000)]
+  0x00007f697d14d800 JavaThread "container-0" [_thread_blocked, id=535111, stack(0x00007f6935420000,0x00007f6935521000)]
+  0x00007f697d18d000 JavaThread "mysql-cj-abandoned-connection-cleanup" daemon [_thread_blocked, id=535112, stack(0x00007f693531f000,0x00007f6935420000)]
+  0x00007f697d452800 JavaThread "HikariPool-1 housekeeper" daemon [_thread_blocked, id=535122, stack(0x00007f6934a1a000,0x00007f6934b1b000)]
+  0x00007f6930001000 JavaThread "Attach Listener" daemon [_thread_blocked, id=535136, stack(0x00007f6934018000,0x00007f6934119000)]
+  0x00007f697da3c000 JavaThread "http-nio-8080-BlockPoller" daemon [_thread_in_native, id=535137, stack(0x00007f68c78ff000,0x00007f68c7a00000)]
+  0x00007f697da3e000 JavaThread "http-nio-8080-exec-1" daemon [_thread_blocked, id=535138, stack(0x00007f68c77fe000,0x00007f68c78ff000)]
+  0x00007f697da3f000 JavaThread "http-nio-8080-exec-2" daemon [_thread_blocked, id=535139, stack(0x00007f68c76fd000,0x00007f68c77fe000)]
+  0x00007f697da41000 JavaThread "http-nio-8080-exec-3" daemon [_thread_blocked, id=535140, stack(0x00007f68c75fc000,0x00007f68c76fd000)]
+  0x00007f697da43000 JavaThread "http-nio-8080-exec-4" daemon [_thread_blocked, id=535141, stack(0x00007f68c74fb000,0x00007f68c75fc000)]
+  0x00007f697da45000 JavaThread "http-nio-8080-exec-5" daemon [_thread_blocked, id=535142, stack(0x00007f68c73fa000,0x00007f68c74fb000)]
+  0x00007f697da47000 JavaThread "http-nio-8080-exec-6" daemon [_thread_blocked, id=535143, stack(0x00007f68c72f9000,0x00007f68c73fa000)]
+  0x00007f697da49000 JavaThread "http-nio-8080-exec-7" daemon [_thread_blocked, id=535144, stack(0x00007f68c71f8000,0x00007f68c72f9000)]
+  0x00007f697da4b000 JavaThread "http-nio-8080-exec-8" daemon [_thread_blocked, id=535145, stack(0x00007f68c70f7000,0x00007f68c71f8000)]
+  0x00007f697da4d000 JavaThread "http-nio-8080-exec-9" daemon [_thread_blocked, id=535146, stack(0x00007f68c6ff6000,0x00007f68c70f7000)]
+  0x00007f697da4f000 JavaThread "http-nio-8080-exec-10" daemon [_thread_blocked, id=535147, stack(0x00007f68c6ef5000,0x00007f68c6ff6000)]
+  0x00007f697da55800 JavaThread "http-nio-8080-ClientPoller" daemon [_thread_in_native, id=535148, stack(0x00007f68c6df4000,0x00007f68c6ef5000)]
+  0x00007f697da58000 JavaThread "http-nio-8080-Acceptor" daemon [_thread_in_native, id=535149, stack(0x00007f68c6cf3000,0x00007f68c6df4000)]
+  0x00007f697c01a800 JavaThread "DestroyJavaVM" [_thread_blocked, id=535066, stack(0x00007f698177c000,0x00007f698187d000)]
+  0x00007f68a4063800 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=535417, stack(0x00007f6934719000,0x00007f693481a000)]
+=>0x00007f6908001800 JavaThread "RMI TCP Connection(5)-127.0.0.1" daemon [_thread_in_vm, id=817379, stack(0x00007f68c6399000,0x00007f68c649a000)]
+
+Other Threads:
+  0x00007f697c242000 VMThread "VM Thread" [stack: 0x00007f695447d000,0x00007f695457d000] [id=535073]
+  0x00007f697c743000 WatcherThread [stack: 0x00007f6937033000,0x00007f6937133000] [id=535095]
+  0x00007f697c032800 GCTaskThread "GC Thread#0" [stack: 0x00007f69813e6000,0x00007f69814e6000] [id=535068]
+  0x00007f6944001000 GCTaskThread "GC Thread#1" [stack: 0x00007f6936f31000,0x00007f6937031000] [id=535096]
+  0x00007f6944002800 GCTaskThread "GC Thread#2" [stack: 0x00007f6936e2f000,0x00007f6936f2f000] [id=535097]
+  0x00007f6944004800 GCTaskThread "GC Thread#3" [stack: 0x00007f6936d2d000,0x00007f6936e2d000] [id=535098]
+  0x00007f6944006000 GCTaskThread "GC Thread#4" [stack: 0x00007f6936c2b000,0x00007f6936d2b000] [id=535099]
+  0x00007f6944008000 GCTaskThread "GC Thread#5" [stack: 0x00007f6936b29000,0x00007f6936c29000] [id=535100]
+  0x00007f6944015800 GCTaskThread "GC Thread#6" [stack: 0x00007f6934e1f000,0x00007f6934f1f000] [id=535118]
+  0x00007f6944016800 GCTaskThread "GC Thread#7" [stack: 0x00007f6934d1d000,0x00007f6934e1d000] [id=535119]
+  0x00007f697c091000 ConcurrentGCThread "G1 Main Marker" [stack: 0x00007f6980005000,0x00007f6980105000] [id=535069]
+  0x00007f697c093000 ConcurrentGCThread "G1 Conc#0" [stack: 0x00007f6957a0e000,0x00007f6957b0e000] [id=535070]
+  0x00007f6950001000 ConcurrentGCThread "G1 Conc#1" [stack: 0x00007f6935e25000,0x00007f6935f25000] [id=535106]
+  0x00007f6950002000 ConcurrentGCThread "G1 Conc#2" [stack: 0x00007f6935d23000,0x00007f6935e23000] [id=535107]
+  0x00007f697c19d000 ConcurrentGCThread "G1 Refine#0" [stack: 0x00007f6954f02000,0x00007f6955002000] [id=535071]
+  0x00007f697c19f000 ConcurrentGCThread "G1 Young RemSet Sampling" [stack: 0x00007f6954e00000,0x00007f6954f00000] [id=535072]
+
+Threads with active compile tasks:
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap address: 0x0000000705c00000, size: 4004 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+Narrow klass base: 0x0000000800000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x0000000840000000
+
+Heap:
+ garbage-first heap   total 344064K, used 78798K [0x0000000705c00000, 0x0000000800000000)
+  region size 1024K, 45 young (46080K), 17 survivors (17408K)
+ Metaspace       used 59399K, capacity 61209K, committed 61440K, reserved 1101824K
+  class space    used 7906K, capacity 8612K, committed 8704K, reserved 1048576K
+Heap Regions: E=young(eden), S=young(survivor), O=old, HS=humongous(starts), HC=humongous(continues), CS=collection set, F=free, A=archive, TAMS=top-at-mark-start (previous, next)
+|   0|0x0000000705c00000, 0x0000000705d00000, 0x0000000705d00000|100%|HS|  
